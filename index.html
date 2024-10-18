@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+        }
+        .game-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="game-container">
+    <h1>Password Guessing Game</h1>
+    <p>Guess the correct password to win!</p>
+    
+    <input type="password" id="guessInput" placeholder="Enter your guess">
+    <br>
+    <button onclick="checkPassword()">Submit Guess</button>
+    
+    <div class="result" id="resultMessage"></div>
+</div>
+
+<script>
+    const correctPassword = "Sunshine2024!"; // Change this to set the password
+
+    function checkPassword() {
+        const userGuess = document.getElementById('guessInput').value;
+        const resultMessage = document.getElementById('resultMessage');
+        
+        if (userGuess === correctPassword) {
+            resultMessage.textContent = "🎉 Correct! You've guessed the password!";
+            resultMessage.style.color = "green";
+        } else {
+            resultMessage.textContent = "❌ Incorrect, try again!";
+            resultMessage.style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>
